@@ -33,11 +33,7 @@ module Todoist
 
     private
     def self.set_base_uri
-      if premium?
-        base_uri 'https://todoist.com/API'
-      else
-        base_uri 'http://todoist.com/API'
-      end
+      base_uri 'https://todoist.com/API'
     end
 
     def self.premium?
