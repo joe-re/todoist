@@ -77,8 +77,7 @@ module Todoist
     #
     # @return [Integer] The number of tasks this project has
     def task_count
-      @all_tasks ||= Task.all(self)
-      @all_tasks.size
+      Task.all(self).size
     end
 
     ##
@@ -86,7 +85,7 @@ module Todoist
     #
     # @return [Array] An Array of Todoist::Tasks
     def tasks
-      @uncompleted_tasks ||= Task.uncompleted(self)
+      Task.uncompleted(self)
     end
 
     ##
@@ -94,7 +93,7 @@ module Todoist
     #
     # @return [Array] An Array of completed Todoist::Tasks
     def completed_tasks
-      @completed_tasks ||= Task.completed(self)
+      Task.completed(self)
     end
 
     ##
